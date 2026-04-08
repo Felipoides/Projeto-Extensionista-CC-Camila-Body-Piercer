@@ -1,45 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<meta charset="UTF-8">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nós</title>
+    <title>Camila Piercer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!--Cabeçalho-->
-    <header>
-        <nav>
-         <a href="index.html">Home</a>
-         <a href="sobre.html">Sobre nós</a>
-         <a href="serviços.html">Serviços</a>
-         <a href="contato.html">Contato</a>
+    <header class="site-header">
+        <nav class="navbar container">
+            <a class="brand" href="index.html">Camila <span>Piercer</span></a>
+            <div class="nav-links">
+                <a class="active" href="index.html">Home</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="Servicos.html">Servi&ccedil;os</a>
+                <a href="Contato.html">Contato</a>
+            </div>
+            <div class="nav-socials">
+                <a href="#" aria-label="Instagram">
+                    <img src="ASSETS/Instagram.png" alt="Instagram">
+                </a>
+                <a href="#" aria-label="WhatsApp">
+                    <img src="ASSETS/whatsapp.png" alt="WhatsApp">
+                </a>
+            </div>
         </nav>
     </header>
-    <!--Texto da pagina inicial Sobre nos-->
-    <section>
-        <h1>Camila <br>Body Pierce</h1>
-        <h3>8 Anos de experiecia em Varginha-MG</h3>
-        <h5>Perfuração Basica〡 Avançada〡 intima〡Reconstrução</h5>
-        <img src="img/Camila.jpeg" alt="Foto da Camila">
-    </section>
-    <!--Texto do meio pra baixo-->
-    <section>
-        <h1>Por que escolher a Camila</h1>
-    </section>
-    <!--Bloco experiencia-->
-    <section>
-        <h3>8 Anos de experiencia</h3>
-        <p> Profissional qualificada com vasta experiencia em perfuracoes de todos os niveis de complexidade.</p>
-    </section>
-    <!--Higiene-->
-    <section>
-        <h3>Seguranca e Higiene</h3>
-        <p>Materiais esterilizados, ambiente seguro e todas as normas sanitarias seguidas rigorosamente. </p>
-    </section>
-    <!--Atendimento-->
-    <section>
-        <h3>8 Anos de experiencia</h3>
-        <p> Sempre disponivel para tirar duvidas e responder perguntas sobre piercings e cuidados.</p>
-    </section>
+
+    <main>
+        <section class="hero section-band">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Body Piercer Profissional</p>
+                    <h1>Camila<br><span>Body Piercer</span></h1>
+                    <p class="hero-text">8 anos de experi&ecirc;ncia em Varginha/MG</p>
+                    <p class="hero-services">Perfura&ccedil;&atilde;o b&aacute;sica | Avan&ccedil;ada | &Iacute;ntima | Reconstru&ccedil;&atilde;o</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#">@camilapiercer</a>
+                        <a class="btn btn-secondary" href="#">(35) 98823-4408</a>
+                    </div>
+                    <a class="link-arrow" href="Servicos.html">Ver Servi&ccedil;os</a>
+                </div>
+
+                <div class="hero-card">
+                    <div class="photo-frame">
+                        <img src="634468225_18142960012466624_7711370602859907070_n.jpg" alt="Foto da Camila">
+                        <div class="photo-placeholder">
+                            <p>Camila</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Diferenciais</p>
+                    <h2>Por que escolher a Camila?</h2>
+                </div>
+
+                <div class="cards-grid">
+                    <article class="info-card">
+                        <div class="card-icon">01</div>
+                        <h3>8 Anos de Experi&ecirc;ncia</h3>
+                        <p>Profissional qualificada com vasta experi&ecirc;ncia em perfura&ccedil;&otilde;es de todos os n&iacute;veis de complexidade.</p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-icon">02</div>
+                        <h3>Seguran&ccedil;a e Higiene</h3>
+                        <p>Materiais esterilizados, ambiente seguro e todas as normas sanit&aacute;rias seguidas rigorosamente.</p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-icon">03</div>
+                        <h3>Atendimento R&aacute;pido</h3>
+                        <p>Sempre dispon&iacute;vel para tirar d&uacute;vidas e responder perguntas sobre piercings e cuidados.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
