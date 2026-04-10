@@ -349,6 +349,45 @@ a {
     margin-bottom: 16px;
 }
 
+
+.contact-section {
+    padding: 88px 0 110px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.contact-panel {
+    padding: 34px;
+}
+
+.contact-panel h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 16px;
+}
+
+.contact-panel p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 1.02rem;
+    max-width: 540px;
+}
+
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.contact-cards {
+    display: grid;
+    gap: 24px;
+}
+
 .features::before {
     content: "";
     position: absolute;
@@ -424,7 +463,8 @@ a {
 
     .hero-grid,
     .cards-grid,
-    .about-grid {
+    .about-grid,
+    .contact-grid {
         grid-template-columns: 1fr;
     }
 
@@ -449,8 +489,17 @@ a {
         min-height: 360px;
     }
 
-    .about-copy {
+    .about-copy,
+    .contact-panel {
         text-align: center;
+    }
+
+    .contact-panel p:not(.eyebrow) {
+        margin: 0 auto;
+    }
+
+    .contact-actions {
+        justify-content: center;
     }
 }
 
@@ -481,5 +530,9 @@ a {
 
     .info-card {
         padding: 24px;
+    }
+
+    .contact-panel {
+        padding: 26px;
     }
 }
