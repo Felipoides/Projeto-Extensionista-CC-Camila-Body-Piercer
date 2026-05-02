@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<meta charset="UTF-8">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camila Piercer</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="site-header">
         <nav class="navbar container">
             <a class="brand" href="index.html">Camila <span>Piercer</span></a>
+
             <div class="nav-links">
                 <a class="active" href="index.html">Home</a>
                 <a href="sobre.html">Sobre</a>
                 <a href="Servicos.html">Serviços</a>
                 <a href="Contato.html">Contato</a>
             </div>
+
             <div class="nav-socials">
-                <a href="https://www.instagram.com/camilapiercerr?igsh=MXJnbnh0bXM4ZmdyZA%3D%3D" aria-label="Instagram">
+                <a href="https://www.instagram.com/camilapiercerr" aria-label="Instagram">
                     <img src="../img/Instagram.png" alt="Instagram">
                 </a>
-                <a href="https://api.whatsapp.com/send/?phone=5535988234408&text&type=phone_number&app_absent=0&utm_source=ig" aria-label="WhatsApp">
+
+                <a href="https://api.whatsapp.com/send/?phone=5535988234408" aria-label="WhatsApp">
                     <img src="../img/whatsapp.png" alt="WhatsApp">
                 </a>
+
+                <!-- 🌙 BOTÃO DE TEMA -->
+                <button id="theme-toggle" aria-label="Trocar tema">🌙</button>
             </div>
         </nav>
     </header>
@@ -37,19 +45,21 @@
                 <div class="hero-copy">
                     <p class="eyebrow">Body Piercer Profissional</p>
                     <h1>Camila<br><span>Body Piercer</span></h1>
+
                     <p class="hero-text">8 anos de experiência em Varginha/MG</p>
                     <p class="hero-services">Perfuração básica | Avançada | Íntima | Reconstrução</p>
+
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="https://www.instagram.com/camilapiercerr?igsh=MXJnbnh0bXM4ZmdyZA%3D%3D">@camilapiercer</a>
-                        <a class="btn btn-secondary" href="https://api.whatsapp.com/send/?phone=5535988234408&text&type=phone_number&app_absent=0&utm_source=ig">(35) 98823-4408</a>
+                        <a class="btn btn-primary" href="https://www.instagram.com/camilapiercerr">@camilapiercer</a>
+                        <a class="btn btn-secondary" href="https://api.whatsapp.com/send/?phone=5535988234408">(35) 98823-4408</a>
                     </div>
+
                     <a class="link-arrow" href="Servicos.html">Ver Serviços</a>
                 </div>
 
                 <div class="hero-card">
                     <div class="photo-frame">
-                        <img src="../img/Camila.jpeg" alt="Fto da Camila">
-                        </div>
+                        <img src="../img/Camila.jpeg" alt="Foto da Camila">
                     </div>
                 </div>
             </div>
@@ -72,17 +82,45 @@
                     <article class="info-card">
                         <div class="card-icon">02</div>
                         <h3>Segurança e Higiene</h3>
-                        <p>Materiais esterilizados, ambiente seguro e todas as normas sanitarias seguidas rigorosamente.</p>
+                        <p>Materiais esterilizados, ambiente seguro e todas as normas sanitárias seguidas rigorosamente.</p>
                     </article>
 
                     <article class="info-card">
                         <div class="card-icon">03</div>
-                        <h3>Atendimento Rapido</h3>
-                        <p>Sempre disponivel para tirar dvidas e responder perguntas sobre piercings e cuidados.</p>
+                        <h3>Atendimento Rápido</h3>
+                        <p>Sempre disponível para tirar dúvidas e responder perguntas sobre piercings e cuidados.</p>
                     </article>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- 🌙 SCRIPT DE TEMA -->
+    <script>
+        const button = document.getElementById("theme-toggle");
+
+        // carregar tema salvo
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme === "light") {
+            document.body.classList.add("light");
+            button.textContent = "☀️";
+        } else if (!savedTheme) {
+            // automático pelo sistema
+            if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+                document.body.classList.add("light");
+                button.textContent = "☀️";
+            }
+        }
+
+        button.addEventListener("click", () => {
+            document.body.classList.toggle("light");
+
+            const isLight = document.body.classList.contains("light");
+
+            button.textContent = isLight ? "☀️" : "🌙";
+            localStorage.setItem("theme", isLight ? "light" : "dark");
+        });
+    </script>
 </body>
 </html>
