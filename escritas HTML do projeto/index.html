@@ -10,6 +10,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        #theme-toggle,
+        #voice-toggle,
+        #contrast-toggle,
+        #font-decrease,
+        #font-increase {
+            border: none;
+            background: transparent;
+            color: inherit;
+            font-size: 22px;
+            cursor: pointer;
+            transition: transform .2s ease;
+        }
+
+        #theme-toggle:hover,
+        #voice-toggle:hover,
+        #contrast-toggle:hover,
+        #font-decrease:hover,
+        #font-increase:hover {
+            transform: scale(1.08);
+        }
+
+        body.high-contrast {
+            background: #000;
+            color: #fff;
+        }
+
+        body.high-contrast a,
+        body.high-contrast h1,
+        body.high-contrast h2,
+        body.high-contrast h3,
+        body.high-contrast p,
+        body.high-contrast span {
+            color: #fff !important;
+        }
+
+        body.high-contrast .info-card,
+        body.high-contrast .hero-card,
+        body.high-contrast .site-header {
+            background: #111 !important;
+            border: 1px solid #fff;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,7 +77,13 @@
                     <img src="../img/whatsapp.png" alt="WhatsApp">
                 </a>
 
-                <!-- 🌙 BOTÃO DE TEMA -->
+                <button id="voice-toggle" aria-label="Ativar leitura por voz">🔊</button>
+
+                <button id="contrast-toggle" aria-label="Ativar alto contraste">◐</button>
+
+                <button id="font-decrease" aria-label="Diminuir fonte">−</button>
+                <button id="font-increase" aria-label="Aumentar fonte">+</button>
+
                 <button id="theme-toggle" aria-label="Trocar tema">🌙</button>
             </div>
         </nav>
@@ -95,31 +145,111 @@
         </section>
     </main>
 
-    <!-- 🌙 SCRIPT DE TEMA -->
     <script>
-        const button = document.getElementById("theme-toggle");
+        const themeButton = document.getElementById("theme-toggle");
+        const voiceButton = document.getElementById("voice-toggle");
+        const contrastButton = document.getElementById("contrast-toggle");
+        const fontDecrease = document.getElementById("font-decrease");
+        const fontIncrease = document.getElementById("font-increase");
 
-        // carregar tema salvo
+        /* tema */
         const savedTheme = localStorage.getItem("theme");
 
         if (savedTheme === "light") {
             document.body.classList.add("light");
-            button.textContent = "☀️";
+            themeButton.textContent = "☀️";
         } else if (!savedTheme) {
-            // automático pelo sistema
             if (window.matchMedia("(prefers-color-scheme: light)").matches) {
                 document.body.classList.add("light");
-                button.textContent = "☀️";
+                themeButton.textContent = "☀️";
             }
         }
 
-        button.addEventListener("click", () => {
+        themeButton.addEventListener("click", () => {
             document.body.classList.toggle("light");
 
             const isLight = document.body.classList.contains("light");
 
-            button.textContent = isLight ? "☀️" : "🌙";
+            themeButton.textContent = isLight ? "☀️" : "🌙";
             localStorage.setItem("theme", isLight ? "light" : "dark");
+        });
+
+        /* leitura por voz */
+        let voiceEnabled = false;
+
+        function speak(text) {
+            if (!voiceEnabled) return;
+            if (!text || !text.trim()) return;
+
+            window.speechSynthesis.cancel();
+
+            const speech = new SpeechSynthesisUtterance(text.trim());
+            speech.lang = "pt-BR";
+            speech.rate = 1;
+            speech.pitch = 1;
+
+            window.speechSynthesis.speak(speech);
+        }
+
+        voiceButton.addEventListener("click", () => {
+            voiceEnabled = !voiceEnabled;
+
+            voiceButton.textContent = voiceEnabled ? "🔈" : "🔊";
+
+            if (!voiceEnabled) {
+                window.speechSynthesis.cancel();
+            } else {
+                speak("Leitura ativada");
+            }
+        });
+
+        document.querySelectorAll("a, button, h1, h2, h3, p, span").forEach((element) => {
+            element.addEventListener("mouseenter", () => {
+                const text = element.innerText || element.getAttribute("aria-label") || "";
+                speak(text);
+            });
+        });
+
+        /* contraste */
+        const savedContrast = localStorage.getItem("contrast");
+
+        if (savedContrast === "on") {
+            document.body.classList.add("high-contrast");
+        }
+
+        contrastButton.addEventListener("click", () => {
+            document.body.classList.toggle("high-contrast");
+
+            const enabled = document.body.classList.contains("high-contrast");
+
+            localStorage.setItem("contrast", enabled ? "on" : "off");
+        });
+
+        /* tamanho da fonte */
+        let currentFont = parseInt(localStorage.getItem("fontSize"));
+
+        if (currentFont) {
+            document.documentElement.style.fontSize = currentFont + "%";
+        }
+
+        fontDecrease.addEventListener("click", () => {
+            if (!currentFont) currentFont = 100;
+
+            if (currentFont > 70) {
+                currentFont -= 10;
+                document.documentElement.style.fontSize = currentFont + "%";
+                localStorage.setItem("fontSize", currentFont);
+            }
+        });
+
+        fontIncrease.addEventListener("click", () => {
+            if (!currentFont) currentFont = 100;
+
+            if (currentFont < 130) {
+                currentFont += 10;
+                document.documentElement.style.fontSize = currentFont + "%";
+                localStorage.setItem("fontSize", currentFont);
+            }
         });
     </script>
 </body>
