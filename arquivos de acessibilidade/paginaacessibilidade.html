@@ -1,69 +1,213 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acessibilidade | Camila Piercer</title>
+    <title>Camila Piercer</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../escritas HTML do projeto/style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style acessibildade.css">
+    
 </head>
+
 <body>
     <header class="site-header">
         <nav class="navbar container">
-            <a class="brand" href="../escritas HTML do projeto/index.html">Camila <span>Piercer</span></a>
+            <a class="brand" href="index.html">Camila <span>Piercer</span></a>
+
             <div class="nav-links">
-                <a href="../escritas HTML do projeto/index.html">Home</a>
-                <a href="../escritas HTML do projeto/sobre.html">Sobre</a>
-                <a href="../escritas HTML do projeto/Servicos.html">Serviços</a>
-                <a href="../escritas HTML do projeto/contato.html">Contato</a>
+                <a class="active" href="index.html">Home</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="Servicos.html">Serviços</a>
+                <a href="Contato.html">Contato</a>
             </div>
+
             <div class="nav-socials">
                 <a href="https://www.instagram.com/camilapiercerr" aria-label="Instagram">
                     <img src="../img/Instagram.png" alt="Instagram">
                 </a>
+
                 <a href="https://api.whatsapp.com/send/?phone=5535988234408" aria-label="WhatsApp">
                     <img src="../img/whatsapp.png" alt="WhatsApp">
                 </a>
+
+                <button id="voice-toggle" aria-label="Ativar leitura por voz">🔊</button>
+
+                <button id="contrast-toggle" aria-label="Ativar alto contraste">◐</button>
+
+                <button id="font-decrease" aria-label="Diminuir fonte">−</button>
+                <button id="font-increase" aria-label="Aumentar fonte">+</button>
+
+                <button id="theme-toggle" aria-label="Trocar tema">🌙</button>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="page-hero section-band compact-hero">
-            <div class="container center-copy">
-                <p class="eyebrow">Recursos do site</p>
-                <h1>Acessibilidade</h1>
-                <p>Use o botão A11Y no canto da tela para ajustar fonte, contraste, leitura por voz e visualização dos links.</p>
+        <section class="hero section-band">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Body Piercer Profissional</p>
+                    <h1>Camila<br><span>Body Piercer</span></h1>
+
+                    <p class="hero-text">8 anos de experiência em Varginha/MG</p>
+                    <p class="hero-services">Perfuração básica | Avançada | Íntima | Reconstrução</p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="https://www.instagram.com/camilapiercerr">@camilapiercer</a>
+                        <a class="btn btn-secondary" href="https://api.whatsapp.com/send/?phone=5535988234408">(35) 98823-4408</a>
+                    </div>
+
+                    <a class="link-arrow" href="Servicos.html">Ver Serviços</a>
+                </div>
+
+                <div class="hero-card">
+                    <div class="photo-frame">
+                        <img src="../img/Camila.jpeg" alt="Foto da Camila">
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="features">
-            <div class="container cards-grid">
-                <article class="info-card">
-                    <div class="card-icon">A+</div>
-                    <h3>Tamanho da fonte</h3>
-                    <p>Aumente ou diminua os textos do site conforme sua necessidade.</p>
-                </article>
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Diferenciais</p>
+                    <h2>Por que escolher a Camila?</h2>
+                </div>
 
-                <article class="info-card">
-                    <div class="card-icon">HC</div>
-                    <h3>Alto contraste</h3>
-                    <p>Ative cores mais fortes para melhorar a leitura em telas diferentes.</p>
-                </article>
+                <div class="cards-grid">
+                    <article class="info-card">
+                        <div class="card-icon">01</div>
+                        <h3>8 Anos de Experiência</h3>
+                        <p>Profissional qualificada com vasta experiência em perfurações de todos os níveis de complexidade.</p>
+                    </article>
 
-                <article class="info-card">
-                    <div class="card-icon">VOZ</div>
-                    <h3>Leitura por voz</h3>
-                    <p>Ative a leitura para ouvir botões, links e textos ao navegar pelo site.</p>
-                </article>
+                    <article class="info-card">
+                        <div class="card-icon">02</div>
+                        <h3>Segurança e Higiene</h3>
+                        <p>Materiais esterilizados, ambiente seguro e todas as normas sanitárias seguidas rigorosamente.</p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-icon">03</div>
+                        <h3>Atendimento Rápido</h3>
+                        <p>Sempre disponível para tirar dúvidas e responder perguntas sobre piercings e cuidados.</p>
+                    </article>
+                </div>
             </div>
         </section>
     </main>
 
-    <script src="recursos de acessiblidade.js"></script>
+    <script>
+        const themeButton = document.getElementById("theme-toggle");
+        const voiceButton = document.getElementById("voice-toggle");
+        const contrastButton = document.getElementById("contrast-toggle");
+        const fontDecrease = document.getElementById("font-decrease");
+        const fontIncrease = document.getElementById("font-increase");
+
+        /* tema */
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme === "light") {
+            document.body.classList.add("light");
+            themeButton.textContent = "☀️";
+        } else if (!savedTheme) {
+            if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+                document.body.classList.add("light");
+                themeButton.textContent = "☀️";
+            }
+        }
+
+        themeButton.addEventListener("click", () => {
+            document.body.classList.toggle("light");
+
+            const isLight = document.body.classList.contains("light");
+
+            themeButton.textContent = isLight ? "☀️" : "🌙";
+            localStorage.setItem("theme", isLight ? "light" : "dark");
+        });
+
+        /* leitura por voz */
+        let voiceEnabled = false;
+
+        function speak(text) {
+            if (!voiceEnabled) return;
+            if (!text || !text.trim()) return;
+
+            window.speechSynthesis.cancel();
+
+            const speech = new SpeechSynthesisUtterance(text.trim());
+            speech.lang = "pt-BR";
+            speech.rate = 1;
+            speech.pitch = 1;
+
+            window.speechSynthesis.speak(speech);
+        }
+
+        voiceButton.addEventListener("click", () => {
+            voiceEnabled = !voiceEnabled;
+
+            voiceButton.textContent = voiceEnabled ? "🔈" : "🔊";
+
+            if (!voiceEnabled) {
+                window.speechSynthesis.cancel();
+            } else {
+                speak("Leitura ativada");
+            }
+        });
+
+        document.querySelectorAll("a, button, h1, h2, h3, p, span").forEach((element) => {
+            element.addEventListener("mouseenter", () => {
+                const text = element.innerText || element.getAttribute("aria-label") || "";
+                speak(text);
+            });
+        });
+
+        /* contraste */
+        const savedContrast = localStorage.getItem("contrast");
+
+        if (savedContrast === "on") {
+            document.body.classList.add("high-contrast");
+        }
+
+        contrastButton.addEventListener("click", () => {
+            document.body.classList.toggle("high-contrast");
+
+            const enabled = document.body.classList.contains("high-contrast");
+
+            localStorage.setItem("contrast", enabled ? "on" : "off");
+        });
+
+        /* tamanho da fonte */
+        let currentFont = parseInt(localStorage.getItem("fontSize"));
+
+        if (currentFont) {
+            document.documentElement.style.fontSize = currentFont + "%";
+        }
+
+        fontDecrease.addEventListener("click", () => {
+            if (!currentFont) currentFont = 100;
+
+            if (currentFont > 70) {
+                currentFont -= 10;
+                document.documentElement.style.fontSize = currentFont + "%";
+                localStorage.setItem("fontSize", currentFont);
+            }
+        });
+
+        fontIncrease.addEventListener("click", () => {
+            if (!currentFont) currentFont = 100;
+
+            if (currentFont < 130) {
+                currentFont += 10;
+                document.documentElement.style.fontSize = currentFont + "%";
+                localStorage.setItem("fontSize", currentFont);
+            }
+        });
+    </script>
 </body>
 </html>
-
-
