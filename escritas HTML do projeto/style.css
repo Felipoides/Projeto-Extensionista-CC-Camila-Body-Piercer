@@ -1,9 +1,14 @@
+/* =========================================================
+   CONFIGURACOES GERAIS - usadas por todos os arquivos HTML
+   Arquivos: index.html, sobre.html, Servicos.html, contato.html
+   ========================================================= */
+
 :root {
-    --bg: #260103;
-    --bg-soft: #4d0509;
-    --bg-deep: #170001;
-    --surface: rgba(90, 8, 15, 0.74);
-    --surface-strong: rgba(120, 14, 24, 0.88);
+    --bg: #2b0002;
+    --bg-soft: #4b0307;
+    --bg-deep: #100000;
+    --surface: rgba(70, 0, 5, 0.78);
+    --surface-strong: rgba(95, 3, 12, 0.9);
     --text: #fff8f2;
     --muted: #ead9ca;
     --cream: #f4e8da;
@@ -34,7 +39,7 @@
 }
 
 html {
-    background: var(--bg-deep); 
+    background: var(--bg-deep);
     scroll-behavior: smooth;
 }
 
@@ -43,10 +48,11 @@ body {
     font-family: "Outfit", sans-serif;
     color: var(--text);
     background:
-        radial-gradient(circle at top left, rgba(182, 34, 46, 0.28), transparent 26%),
-        radial-gradient(circle at 85% 15%, rgba(212, 175, 55, 0.1), transparent 18%),
-        radial-gradient(circle at bottom right, rgba(244, 232, 218, 0.1), transparent 24%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 48%, var(--bg-deep) 100%);
+        radial-gradient(circle at 50% 0%, rgba(147, 14, 26, 0.38), transparent 32%),
+        radial-gradient(circle at 10% 18%, rgba(112, 0, 8, 0.46), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(118, 6, 18, 0.34), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(90, 0, 8, 0.28), transparent 30%),
+        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 34%, var(--bg-soft) 58%, var(--bg-deep) 100%);
     line-height: 1.5;
 }
 
@@ -65,12 +71,18 @@ a {
     margin: 0 auto;
 }
 
+
+/* =========================================================
+   CABECALHO E NAVEGACAO - usados por todos os arquivos HTML
+   Arquivos: index.html, sobre.html, Servicos.html, contato.html
+   ========================================================= */
+
 .site-header {
     position: sticky;
     top: 0;
     z-index: 20;
     backdrop-filter: blur(18px);
-    background: rgba(38, 1, 3, 0.82);
+    background: rgba(18, 0, 1, 0.88);
     border-bottom: 1px solid rgba(212, 175, 55, 0.16);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
 }
@@ -135,8 +147,13 @@ a {
     width: 20px;
     height: 20px;
     object-fit: contain;
-    display: block;
 }
+
+
+/* =========================================================
+   COMPONENTES COMPARTILHADOS
+   Arquivos: index.html, sobre.html, contato.html
+   ========================================================= */
 
 .section-band {
     position: relative;
@@ -148,14 +165,11 @@ a {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at left center, rgba(212, 175, 55, 0.12), transparent 28%),
-        linear-gradient(90deg, rgba(143, 15, 25, 0.34) 0%, rgba(77, 5, 9, 0.12) 48%, rgba(255, 248, 242, 0) 100%);
+        radial-gradient(circle at left center, rgba(182, 22, 38, 0.18), transparent 30%),
+        radial-gradient(circle at top center, rgba(255, 57, 80, 0.1), transparent 18%),
+        linear-gradient(90deg, rgba(86, 0, 7, 0.6) 0%, rgba(37, 0, 3, 0.22) 54%, rgba(16, 0, 0, 0) 100%);
     opacity: 1;
     pointer-events: none;
-}
-
-.hero {
-    padding: 72px 0 92px;
 }
 
 .page-hero {
@@ -163,8 +177,8 @@ a {
 }
 
 .compact-hero h1 {
-    font-size: clamp(2.6rem, 5vw, 4.2rem);
     margin-bottom: 10px;
+    font-size: clamp(2.6rem, 5vw, 4.2rem);
 }
 
 .compact-hero p:not(.eyebrow) {
@@ -180,19 +194,6 @@ a {
     text-align: center;
 }
 
-.hero-grid {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    align-items: center;
-    gap: 56px;
-}
-
-.hero-copy {
-    max-width: 560px;
-}
-
 .eyebrow {
     margin-bottom: 14px;
     font-size: 0.9rem;
@@ -201,47 +202,12 @@ a {
     text-transform: uppercase;
 }
 
-.hero h1 {
-    font-size: clamp(3.2rem, 6vw, 5.5rem);
-    line-height: 0.92;
-    letter-spacing: -0.05em;
-    margin-bottom: 18px;
-}
-
-.hero h1 span {
-    display: inline-block;
-    background: linear-gradient(180deg, var(--gold-deep) 0%, var(--primary-soft) 32%, var(--gold-light) 50%, var(--gold-mid) 70%, var(--gold-deep) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 0 24px rgba(241, 198, 68, 0.16);
-}
-
-.hero-text {
-    font-size: 1.2rem;
-    color: var(--cream);
-    margin-bottom: 8px;
-}
-
-.hero-services {
-    color: rgba(255, 248, 242, 0.72);
-    font-size: 1rem;
-    margin-bottom: 28px;
-}
-
-.hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-bottom: 24px;
-}
-
 .btn {
     min-width: 180px;
     padding: 14px 22px;
     border-radius: 999px;
-    font-weight: 700;
     font-size: 0.98rem;
+    font-weight: 700;
     transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
@@ -252,8 +218,8 @@ a {
 .btn-primary {
     color: var(--white-soft);
     background: linear-gradient(135deg, #a1121e 0%, var(--primary-strong) 100%);
-    box-shadow: 0 16px 34px var(--primary-glow);
     border: 1px solid rgba(240, 214, 166, 0.24);
+    box-shadow: 0 16px 34px var(--primary-glow);
 }
 
 .btn-secondary {
@@ -275,6 +241,132 @@ a {
     font-size: 1rem;
 }
 
+.card-surface {
+    overflow: hidden;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(180deg, rgba(86, 0, 7, 0.88) 0%, rgba(18, 0, 1, 0.98) 100%);
+    box-shadow: var(--shadow);
+}
+
+.section-heading {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 36px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1;
+}
+
+.cards-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.info-card {
+    padding: 28px;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    background:
+        linear-gradient(180deg, rgba(76, 1, 8, 0.88) 0%, rgba(16, 0, 1, 0.98) 100%),
+        linear-gradient(135deg, rgba(255, 58, 80, 0.06), rgba(255, 255, 255, 0));
+    box-shadow: var(--shadow);
+    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(240, 214, 166, 0.4);
+    box-shadow: 0 28px 64px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 18px;
+    border-radius: 16px;
+    color: var(--bg-deep);
+    background: linear-gradient(135deg, var(--primary-soft) 0%, #9e7422 100%);
+    box-shadow: 0 14px 24px rgba(212, 175, 55, 0.22);
+    font-weight: 800;
+}
+
+.info-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+.info-card p {
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   PAGINA INICIAL
+   Arquivo: index.html
+   ========================================================= */
+
+.hero {
+    padding: 72px 0 92px;
+}
+
+.hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 56px;
+}
+
+.hero-copy {
+    max-width: 560px;
+}
+
+.hero h1 {
+    margin-bottom: 18px;
+    font-size: clamp(3.2rem, 6vw, 5.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.05em;
+}
+
+.hero h1 span {
+    display: inline-block;
+    background: linear-gradient(180deg, var(--gold-deep) 0%, var(--primary-soft) 32%, var(--gold-light) 50%, var(--gold-mid) 70%, var(--gold-deep) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 24px rgba(241, 198, 68, 0.16);
+}
+
+.hero-text {
+    margin-bottom: 8px;
+    color: var(--cream);
+    font-size: 1.2rem;
+}
+
+.hero-services {
+    margin-bottom: 28px;
+    color: rgba(255, 248, 242, 0.72);
+    font-size: 1rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
 .hero-card {
     position: relative;
 }
@@ -283,19 +375,19 @@ a {
     content: "";
     position: absolute;
     inset: 18px -8px -18px 18px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, rgba(143, 15, 25, 0) 68%);
+    background: radial-gradient(circle, rgba(201, 14, 35, 0.28) 0%, rgba(70, 0, 7, 0) 68%);
     filter: blur(16px);
 }
 
 .photo-frame {
     position: relative;
     min-height: 520px;
-    border-radius: var(--radius-lg);
     overflow: hidden;
     border: 1px solid rgba(212, 175, 55, 0.28);
+    border-radius: var(--radius-lg);
     background:
-        linear-gradient(180deg, rgba(93, 8, 14, 0.92), rgba(45, 2, 5, 0.98)),
-        radial-gradient(circle at top, rgba(212, 175, 55, 0.12), transparent 30%);
+        linear-gradient(180deg, rgba(75, 0, 7, 0.94), rgba(16, 0, 1, 0.98)),
+        radial-gradient(circle at top, rgba(201, 14, 35, 0.16), transparent 32%);
     box-shadow: var(--shadow);
 }
 
@@ -334,6 +426,20 @@ a {
     padding: 90px 0 110px;
 }
 
+.features::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(201, 14, 35, 0.1), transparent 22%, transparent 78%, rgba(64, 0, 5, 0.42) 100%);
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PAGINA SOBRE
+   Arquivo: sobre.html
+   ========================================================= */
+
 .about-section {
     position: relative;
     padding: 88px 0 110px;
@@ -342,21 +448,13 @@ a {
 .about-grid {
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
-    gap: 34px;
     align-items: stretch;
-}
-
-.card-surface {
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--card-border);
-    background: linear-gradient(180deg, rgba(96, 10, 17, 0.82) 0%, rgba(45, 2, 5, 0.96) 100%);
-    box-shadow: var(--shadow);
-    overflow: hidden;
+    gap: 34px;
 }
 
 .about-photo {
-    min-height: 520px;
     position: relative;
+    min-height: 520px;
 }
 
 .about-placeholder {
@@ -368,16 +466,21 @@ a {
 }
 
 .about-copy h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 18px;
+    font-size: clamp(2rem, 4vw, 3rem);
 }
 
 .about-copy p {
+    margin-bottom: 16px;
     color: var(--muted);
     font-size: 1.02rem;
-    margin-bottom: 16px;
 }
 
+
+/* =========================================================
+   PAGINA CONTATO
+   Arquivo: contato.html
+   ========================================================= */
 
 .contact-section {
     padding: 88px 0 110px;
@@ -386,8 +489,8 @@ a {
 .contact-grid {
     display: grid;
     grid-template-columns: 1.05fr 0.95fr;
-    gap: 24px;
     align-items: stretch;
+    gap: 24px;
 }
 
 .contact-panel {
@@ -395,14 +498,14 @@ a {
 }
 
 .contact-panel h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 16px;
+    font-size: clamp(2rem, 4vw, 3rem);
 }
 
 .contact-panel p:not(.eyebrow) {
+    max-width: 570px;
     color: var(--muted);
     font-size: 1.02rem;
-    max-width: 570px;
 }
 
 .contact-actions {
@@ -417,119 +520,60 @@ a {
     gap: 24px;
 }
 
-.features::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(212, 175, 55, 0.06), transparent 22%, transparent 78%, rgba(143, 15, 25, 0.22) 100%);
-    pointer-events: none;
-}
 
-.section-heading {
-    position: relative;
-    z-index: 1;
-    margin-bottom: 36px;
-    text-align: center;
-}
-
-.section-heading h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1;
-}
-
-.cards-grid {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-}
-
-.info-card {
-    padding: 28px;
-    border-radius: var(--radius-md);
-    background:
-        linear-gradient(180deg, rgba(88, 9, 15, 0.84) 0%, rgba(34, 2, 4, 0.96) 100%),
-        linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
-    border: 1px solid var(--card-border);
-    box-shadow: var(--shadow);
-    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
-}
-
-.info-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(240, 214, 166, 0.4);
-    box-shadow: 0 28px 64px rgba(0, 0, 0, 0.3);
-}
-
-.card-icon {
-    width: 56px;
-    height: 56px;
-    display: grid;
-    place-items: center;
-    margin-bottom: 18px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, var(--primary-soft) 0%, #9e7422 100%);
-    box-shadow: 0 14px 24px rgba(212, 175, 55, 0.22);
-    font-weight: 800;
-    color: var(--bg-deep);
-}
-
-.info-card h3 {
-    margin-bottom: 12px;
-    font-size: 1.4rem;
-}
-
-.info-card p {
-    color: var(--muted);
-    font-size: 1rem;
-}
+/* =========================================================
+   PAGINA SERVICOS
+   Arquivo: Servicos.html
+   ========================================================= */
 
 .servicos {
-    display:grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     padding: 40px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.servico-card{
-padding: 25px;
-border-radius: 16px;
-background: #170001; /*aqui muda a cor */
-color: #ffe08a;
-
-border: 1px solid rgba(212, 175, 55, 0.1);
-transition: 0.3s;
+.servico-card {
+    padding: 25px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: 16px;
+    color: #ffe08a;
+    background: #120001;
+    transition: 0.3s;
 }
 
-.servico-card:hover{
-    border-color: rgba(212, 175, 55, 0.28);
+.servico-card:hover {
     transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.28);
 }
 
-.servico-card h3{
-    font-size: 1.4rem;
+.servico-card h3 {
     margin-bottom: 12px;
+    font-size: 1.4rem;
 }
 
-.servico-card p{
+.servico-card p {
+    margin-bottom: 14px;
     color: var(--muted);
     font-size: 1rem;
-    margin-bottom: 14px;
 }
 
-.servico-card ul{
-    list-style: disc;
+.servico-card ul {
     padding-left: 20px;
     color: var(--muted);
+    list-style: disc;
 }
 
-.servico-card li{
+.servico-card li {
     margin-bottom: 8px;
     font-size: 0.98rem;
 }
 
 
+/* =========================================================
+   RESPONSIVIDADE - ajustes para telas menores
+   Arquivos: index.html, sobre.html, Servicos.html, contato.html
+   ========================================================= */
 
 @media (max-width: 980px) {
     .navbar {
