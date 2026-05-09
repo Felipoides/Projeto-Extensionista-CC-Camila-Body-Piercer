@@ -1,4 +1,4 @@
-/* =========================================================
+﻿/* =========================================================
    CONFIGURACOES GERAIS - usadas por todos os arquivos HTML
    Arquivos: index.html, sobre.html, Servicos.html, contato.html
    ========================================================= */
@@ -527,48 +527,98 @@ a {
    ========================================================= */
 
 .servicos {
+    position: relative;
+    padding: 70px 0 34px;
+    text-align: center;
+}
+
+.servicos-card {
+    width: min(calc(100% - 32px), 780px);
+    margin: 0 auto;
+}
+
+.card.pequeno {
+    padding: 34px;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(180deg, rgba(86, 0, 7, 0.88) 0%, rgba(18, 0, 1, 0.98) 100%);
+    box-shadow: var(--shadow);
+}
+
+.card.pequeno h1 {
+    margin-bottom: 12px;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+.card.pequeno p {
+    color: var(--muted);
+    font-size: 1.08rem;
+}
+.servicos-lista {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
 }
 
 .servico-card {
-    padding: 25px;
-    border: 1px solid rgba(212, 175, 55, 0.1);
-    border-radius: 16px;
-    color: #ffe08a;
-    background: #120001;
-    transition: 0.3s;
+    background-color: #fff8f0;
+    border: 1px solid #d4af37;
+    border-radius: 18px;
+    padding: 28px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
 }
 
 .servico-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(212, 175, 55, 0.28);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
 }
 
 .servico-card h3 {
+    color: #4b0f1e;
+    font-size: 24px;
     margin-bottom: 12px;
-    font-size: 1.4rem;
 }
 
 .servico-card p {
-    margin-bottom: 14px;
-    color: var(--muted);
-    font-size: 1rem;
+    color: #5c4a3d;
+    font-size: 16px;
+    margin-bottom: 18px;
+    line-height: 1.5;
 }
 
 .servico-card ul {
-    padding-left: 20px;
-    color: var(--muted);
-    list-style: disc;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .servico-card li {
-    margin-bottom: 8px;
-    font-size: 0.98rem;
+    color: #3b2b26;
+    margin-bottom: 10px;
+    padding-left: 22px;
+    position: relative;
 }
 
+.servico-card li::before {
+    content: "✦";
+    color: #d4af37;
+    position: absolute;
+    left: 0;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+    .servicos-lista {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* =========================================================
    RESPONSIVIDADE - ajustes para telas menores
@@ -657,3 +707,201 @@ a {
         padding: 26px;
     }
 }
+
+/* =========================================================
+   ACESSIBILIDADE - recursos globais
+   Arquivos: index.html, sobre.html, Servicos.html, contato.html
+   ========================================================= */
+
+:root {
+    --a11y-font-scale: 100%;
+}
+
+body {
+    font-size: var(--a11y-font-scale);
+}
+
+.skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 1000;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #100000;
+    background: #fff0a6;
+    font-weight: 800;
+    transform: translateY(-140%);
+    transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+.a11y-widget {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 999;
+    display: grid;
+    justify-items: end;
+    gap: 10px;
+    font-family: "Outfit", sans-serif;
+}
+
+.a11y-open-button,
+.a11y-panel button {
+    border: 1px solid rgba(255, 240, 166, 0.55);
+    color: var(--white-soft);
+    background: #5f050b;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.a11y-open-button {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.32);
+}
+
+.a11y-panel {
+    width: min(290px, calc(100vw - 36px));
+    padding: 16px;
+    border: 1px solid rgba(255, 240, 166, 0.42);
+    border-radius: 16px;
+    background: rgba(18, 0, 1, 0.96);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.42);
+}
+
+.a11y-panel-header,
+.a11y-font-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.a11y-panel-header {
+    margin-bottom: 12px;
+}
+
+.a11y-panel-header strong {
+    font-size: 1rem;
+}
+
+.a11y-close-button {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
+
+.a11y-font-controls {
+    margin-bottom: 10px;
+}
+
+.a11y-font-controls button,
+.a11y-panel > button {
+    min-height: 42px;
+    border-radius: 10px;
+}
+
+.a11y-font-controls button {
+    width: 64px;
+}
+
+.a11y-font-controls span {
+    min-width: 62px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.a11y-panel > button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+.a11y-panel button:hover,
+.a11y-panel button:focus-visible,
+.a11y-open-button:hover,
+.a11y-open-button:focus-visible {
+    outline: 3px solid #fff0a6;
+    outline-offset: 3px;
+}
+
+.a11y-panel button.is-active {
+    color: #100000;
+    background: #fff0a6;
+}
+
+.a11y-reset-button {
+    text-align: center !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.a11y-dyslexia-font body {
+    font-family: Arial, Verdana, sans-serif;
+    letter-spacing: 0.02em;
+}
+
+.a11y-underlined-links a {
+    text-decoration: underline;
+    text-underline-offset: 0.22em;
+}
+
+.a11y-high-contrast body {
+    color: #ffffff;
+    background: #000000;
+}
+
+.a11y-high-contrast body,
+.a11y-high-contrast .site-header,
+.a11y-high-contrast .card-surface,
+.a11y-high-contrast .info-card,
+.a11y-high-contrast .servico-card,
+.a11y-high-contrast .contact-panel,
+.a11y-high-contrast .a11y-panel {
+    background: #000000 !important;
+    border-color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+.a11y-high-contrast *,
+.a11y-high-contrast .brand span,
+.a11y-high-contrast .nav-links a.active,
+.a11y-high-contrast .link-arrow,
+.a11y-high-contrast .eyebrow,
+.a11y-high-contrast .hero h1 span {
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+.a11y-high-contrast a,
+.a11y-high-contrast button,
+.a11y-high-contrast .btn,
+.a11y-high-contrast .card-icon {
+    color: #000000 !important;
+    background: #ffff00 !important;
+    border-color: #ffffff !important;
+}
+
+@media (max-width: 640px) {
+    .a11y-widget {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .a11y-open-button {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+
+
