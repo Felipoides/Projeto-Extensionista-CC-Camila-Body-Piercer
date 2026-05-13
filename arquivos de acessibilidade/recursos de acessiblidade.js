@@ -197,19 +197,37 @@
         document.body.prepend(skipLink);
     }
 
-    function bindVoiceReading() {
-        document.addEventListener("focusin", (event) => {
-            const target = event.target.closest(readableSelector);
-            if (!target) return;
-            speak(getReadableText(target));
-        });
+function bindVoiceReading() {
 
-        document.addEventListener("click", (event) => {
-            const target = event.target.closest("a, button, [role='button']");
-            if (!target) return;
-            speak(getReadableText(target));
-        });
-    }
+    document.addEventListener("mouseover", (event) => {
+
+        const target = event.target.closest(readableSelector);
+
+        if (!target) return;
+
+        const text = getReadableText(target);
+
+        if (text.length < 2) return;
+
+        speak(text);
+
+    });
+
+    document.addEventListener("focusin", (event) => {
+
+        const target = event.target.closest(readableSelector);
+
+        if (!target) return;
+
+        const text = getReadableText(target);
+
+        if (text.length < 2) return;
+
+        speak(text);
+
+    });
+
+}
 
     function improveCurrentMarkup() {
         document.querySelectorAll("a, button").forEach((element) => {
