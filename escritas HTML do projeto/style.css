@@ -5,17 +5,17 @@
 
 :root {
     --bg: #2b0002;
-    --bg-soft: #4b0307;
+    --bg-soft: hwb(357 4% 47%);
     --bg-deep: #100000;
     --surface: rgba(70, 0, 5, 0.78);
     --surface-strong: rgba(95, 3, 12, 0.9);
-    --text: #fff8f2;
+    --text: #fcfcfc;
     --muted: #ead9ca;
     --cream: #f4e8da;
     --white-soft: #fffdf9;
 
-    --primary: #8f0f19;
-    --primary-strong: #5f050b;
+    --primary: #8f0f0f;
+    --primary-strong: #5f0505;
     --primary-soft: #f1c644;
     --accent: #ffe08a;
     --gold-deep: #8f5b05;
@@ -903,5 +903,232 @@ body {
     }
 }
 
+/* MODO CLARO - variaveis e ajustes para tema claro*/
+.light {
+    --bg: #ffffff;
+    --bg-soft: #f5f5f5;
+    --bg-deep: #eaeaea;
+
+    --surface: rgba(255, 255, 255, 0.8);
+    --surface-strong: rgba(240, 240, 240, 0.95);
+
+    --text: #1a1a1a;
+    --muted: #555555;
+    --cream: #333333;
+    --white-soft: #ffffff;
+
+    --primary: #f5aeae;
+    --primary-strong: #ffffff;
+    --primary-soft: #d4af37;
+    --accent: #b88a00;
+
+    --gold-deep: #8f5b05;
+    --gold-mid: #c99116;
+    --gold-light: #e6c200;
+
+    --accent-rose: #d96a76;
+    --primary-glow: rgba(212, 175, 55, 0.15);
+
+    --card-border: rgba(0, 0, 0, 0.1);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
 
 
+.light body {
+    background:
+        radial-gradient(circle at top left, rgba(255, 161, 161, 0.35), transparent 26%),
+        radial-gradient(circle at 85% 15%, rgba(212, 175, 55, 0.12), transparent 18%),
+        radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.04), transparent 24%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 48%, var(--bg-deep) 100%);
+}
+
+
+.light .site-header {
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    backdrop-filter: none;
+}
+
+
+.light .nav-links a {
+    color: #333;
+}
+
+.light .nav-links a:hover {
+    color: var(--primary);
+}
+
+.light .nav-socials a {
+    background: rgba(0,0,0,0.05);
+    color: #333;
+}
+
+
+.light .hero-text {
+    color: #333;
+}
+
+.light .hero-services {
+    color: #555;
+}
+
+
+.light .info-card {
+    background: #ffffff;
+    color: #1a1a1a;
+}
+
+.light .card-surface {
+    background: #ffffff;
+}
+
+.light .servico-card {
+    background: #ffffff;
+    color: #1a1a1a;
+}
+
+
+.light .btn-secondary {
+    background: rgba(0,0,0,0.05);
+    color: #333;
+}
+
+.light .btn-primary {
+    box-shadow: none;
+}
+
+.light .photo-frame {
+    background: #ffffff;
+}
+
+.light .about-copy p,
+.light .info-card p,
+.light .servico-card p {
+    color: #555;
+}
+
+.light {
+    --text: #111;
+    --muted: #666;
+    --cream: #444;
+
+    --card-border: rgba(0,0,0,0.06);
+
+    --shadow:
+        0 10px 40px rgba(0,0,0,0.08);
+}
+
+
+/* FUNDO */
+.light body {
+    background: #f5f5f5;
+}
+
+
+/* REMOVE DEGRADES */
+.light .section-band::before,
+.light .features::before {
+    display: none;
+}
+
+
+/* HEADER */
+.light .site-header {
+    background: rgba(255,255,255,0.9);
+
+    border-bottom:
+        1px solid rgba(0,0,0,0.06);
+
+    backdrop-filter: blur(14px);
+}
+
+
+/* LINKS */
+.light .nav-links a {
+    color: #111;
+}
+
+
+/* HERO */
+.light .hero-text {
+    color: #222;
+}
+
+.light .hero-services {
+    color: #666;
+}
+
+
+/* FOTO */
+.light .photo-frame {
+
+    height: 640px;
+
+    background: #fff;
+
+    border-radius: 32px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(0,0,0,0.06);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.08);
+}
+
+
+.light .photo-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center top;
+}
+
+
+/* CARDS */
+.light .info-card {
+
+    background: #fff;
+
+    border:
+        1px solid rgba(0,0,0,0.05);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.05);
+}
+
+
+/* SUPERFICIES */
+.light .card-surface {
+    background: #fff;
+}
+
+
+/* SERVICOS */
+.light .servico-card {
+    background: #fff;
+    color: #111;
+}
+
+
+/* TEXTO */
+.light .info-card p,
+.light .servico-card p,
+.light .about-copy p {
+    color: #666;
+}
+
+
+/* BOTAO SECUNDARIO */
+.light .btn-secondary {
+
+    background: #fff;
+
+    color: #111;
+
+    border:
+        1px solid rgba(0,0,0,0.08);
+}

@@ -1,76 +1,165 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Contato | Camila Piercer</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
+
+
     <header class="site-header">
+
         <nav class="navbar container">
-            <a class="brand" href="index.html">Camila <span>Piercer</span></a>
+            <a class="brand" href="index.html">
+                Camila <span>Piercer</span>
+            </a>
+
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="sobre.html">Sobre</a>
                 <a href="Servicos.html">Serviços</a>
                 <a class="active" href="contato.html">Contato</a>
             </div>
+
             <div class="nav-socials">
-                <a href="https://www.instagram.com/camilapiercerr?igsh=MXJnbnh0bXM4ZmdyZA%3D%3D" aria-label="Instagram">
+
+                <a href="https://www.instagram.com/camilapiercerr" aria-label="Instagram" target="_blank">
                     <img src="../img/Instagram.png" alt="Instagram">
                 </a>
-                <a href="https://api.whatsapp.com/send/?phone=5535988234408&text&type=phone_number&app_absent=0&utm_source=ig" aria-label="WhatsApp">
+
+                <a href="https://api.whatsapp.com/send/?phone=5535988234408" aria-label="WhatsApp" target="_blank">
                     <img src="../img/whatsapp.png" alt="WhatsApp">
                 </a>
+
+                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">🌙</button>
+
             </div>
+
         </nav>
+
     </header>
 
     <main>
+
+        <!-- HERO -->
         <section class="page-hero section-band compact-hero">
+
             <div class="container center-copy">
+
                 <p class="eyebrow">Fale Comigo</p>
+
                 <h1>Contato</h1>
+
                 <p>Entre em contato para agendar seu piercing, tirar dúvidas sobre cuidados ou conversar sobre o procedimento ideal para você.</p>
+
             </div>
+
         </section>
 
         <section class="contact-section">
+
             <div class="container contact-grid">
+
                 <article class="contact-panel card-surface">
+
                     <p class="eyebrow">Atendimento</p>
+
                     <h2>Vamos conversar?</h2>
+
                     <p>Escolha o canal que preferir para falar com a Camila e receber um atendimento rápido e acolhedor.</p>
 
+                    <!-- Botões -->
                     <div class="contact-actions">
-                        <a class="btn btn-primary" href="https://api.whatsapp.com/send/?phone=5535988234408&text&type=phone_number&app_absent=0&utm_source=ig" target="_blank" rel="noopener noreferrer">Chamar no WhatsApp</a>
-                        <a class="btn btn-secondary" href="https://www.instagram.com/camilapiercerr?igsh=MXJnbnh0bXM4ZmdyZA%3D%3D" target="_blank" rel="noopener noreferrer">Abrir Instagram</a>
+
+                        <a class="btn btn-primary" href="https://api.whatsapp.com/send/?phone=5535988234408" target="_blank" rel="noopener noreferrer">Chamar no WhatsApp</a>
+
+                        <a class="btn btn-secondary" href="https://www.instagram.com/camilapiercerr" target="_blank" rel="noopener noreferrer">Abrir Instagram</a>
+
                     </div>
+
                 </article>
 
                 <div class="contact-cards">
+
                     <article class="info-card">
+
                         <div class="card-icon">01</div>
+
                         <h3>WhatsApp</h3>
+
                         <p>Canal ideal para agendamentos, orçamento e dúvidas rápidas sobre perfuração e cuidados.</p>
+
                     </article>
 
                     <article class="info-card">
+
                         <div class="card-icon">02</div>
+
                         <h3>Instagram</h3>
+
                         <p>Veja trabalhos, acompanhe novidades e fale diretamente pelas mensagens da página.</p>
+
                     </article>
+
                 </div>
+
             </div>
+
         </section>
+
     </main>
+
     <script src="../arquivos de acessibilidade/recursos de acessiblidade.js"></script>
+
+
+    <script>
+
+        const themeButton = document.getElementById("theme-toggle");
+
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme === "light") {
+
+            document.body.classList.add("light");
+
+            themeButton.textContent = "☀️";
+
+        }
+
+        themeButton.addEventListener("click", () => {
+
+            document.body.classList.toggle("light");
+
+            const isLight = document.body.classList.contains("light");
+
+            if (isLight) {
+
+                themeButton.textContent = "☀️";
+
+                localStorage.setItem("theme", "light");
+
+            } else {
+
+                themeButton.textContent = "🌙";
+
+                localStorage.setItem("theme", "dark");
+
+            }
+
+        });
+
+    </script>
+
 </body>
 </html>
-
-
-

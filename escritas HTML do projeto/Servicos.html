@@ -1,46 +1,83 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Serviços | Camila Piercer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
+
     <header class="site-header">
+
         <nav class="navbar container">
-            <a class="brand" href="index.html">Camila <span>Piercer</span></a>
+
+            <a class="brand" href="index.html">
+                Camila <span>Piercer</span>
+            </a>
+
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="sobre.html">Sobre</a>
                 <a class="active" href="Servicos.html">Serviços</a>
                 <a href="contato.html">Contato</a>
             </div>
+
             <div class="nav-socials">
-                <a href="https://www.instagram.com/camilapiercerr?igsh=MXJnbnh0bXM4ZmdyZA%3D%3D" aria-label="Instagram">
+
+                <a href="https://www.instagram.com/camilapiercerr" aria-label="Instagram" target="_blank">
                     <img src="../img/Instagram.png" alt="Instagram">
                 </a>
-                <a href="https://api.whatsapp.com/send/?phone=5535988234408&text&type=phone_number&app_absent=0&utm_source=ig" aria-label="WhatsApp">
+
+                <a href="https://api.whatsapp.com/send/?phone=5535988234408" aria-label="WhatsApp" target="_blank">
                     <img src="../img/whatsapp.png" alt="WhatsApp">
                 </a>
+
+                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">🌙</button>
+
             </div>
+
         </nav>
+
     </header>
 
     <main>
+
         <section class="servicos">
+
             <div class="servicos-card">
+
                 <div class="card pequeno">
+
                     <h1>Serviços</h1>
+
                     <p>Conheça todos os tipos de perfuração que realizo com excelência e segurança.</p>
+
                 </div>
+
             </div>
+
         </section>
 
         <section class="servicos-lista" aria-label="Lista de serviços">
+
             <article class="servico-card">
+
                 <h3>Perfuração Básica</h3>
+
                 <p>Piercings tradicionais realizados com segurança e precisão.</p>
+
                 <ul>
                     <li>Lóbulo da orelha</li>
                     <li>Nariz (nostril)</li>
@@ -48,11 +85,15 @@
                     <li>Septo</li>
                     <li>Sobrancelha</li>
                 </ul>
+
             </article>
 
             <article class="servico-card">
+
                 <h3>Perfuração Avançada</h3>
+
                 <p>Piercings mais complexos com técnica refinada.</p>
+
                 <ul>
                     <li>Helix e forward helix</li>
                     <li>Tragus e anti-tragus</li>
@@ -60,11 +101,15 @@
                     <li>Conch e industrial</li>
                     <li>Snug e outros</li>
                 </ul>
+
             </article>
 
             <article class="servico-card">
+
                 <h3>Perfuração Íntima</h3>
+
                 <p>Atendimento discreto e profissional.</p>
+
                 <ul>
                     <li>Atendimento reservado</li>
                     <li>Técnicas especializadas</li>
@@ -72,11 +117,15 @@
                     <li>Total discrição</li>
                     <li>Orientação completa</li>
                 </ul>
+
             </article>
 
             <article class="servico-card">
+
                 <h3>Reconstrução</h3>
+
                 <p>Correção de piercings antigos ou mal posicionados.</p>
+
                 <ul>
                     <li>Correção de posição</li>
                     <li>Recuperação de perfurações</li>
@@ -84,10 +133,53 @@
                     <li>Orientação de cicatrização</li>
                     <li>Acompanhamento</li>
                 </ul>
+
             </article>
+
         </section>
+
     </main>
 
     <script src="../arquivos de acessibilidade/recursos de acessiblidade.js"></script>
+
+    <script>
+
+        const themeButton = document.getElementById("theme-toggle");
+
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme === "light") {
+
+            document.body.classList.add("light");
+
+            themeButton.textContent = "☀️";
+
+        }
+
+        themeButton.addEventListener("click", () => {
+
+            document.body.classList.toggle("light");
+
+            const isLight = document.body.classList.contains("light");
+
+            if (isLight) {
+
+                themeButton.textContent = "☀️";
+
+                localStorage.setItem("theme", "light");
+
+            } else {
+
+                themeButton.textContent = "🌙";
+
+                localStorage.setItem("theme", "dark");
+
+            }
+
+        });
+
+    </script>
+
 </body>
+
 </html>

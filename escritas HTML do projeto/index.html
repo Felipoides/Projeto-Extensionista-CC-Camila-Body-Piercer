@@ -7,6 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
@@ -16,84 +17,136 @@
     <header class="site-header">
         <nav class="navbar container">
             <a class="brand" href="index.html">Camila <span>Piercer</span></a>
-
             <div class="nav-links">
                 <a class="active" href="index.html">Home</a>
                 <a href="sobre.html">Sobre</a>
                 <a href="Servicos.html">Serviços</a>
                 <a href="contato.html">Contato</a>
             </div>
-
             <div class="nav-socials">
                 <a href="https://www.instagram.com/camilapiercerr" aria-label="Instagram">
-                    <img src="../img/Instagram.png" alt="Instagram">
-                </a>
-
+                    <img src="../img/Instagram.png" alt="Instagram"></a>
                 <a href="https://api.whatsapp.com/send/?phone=5535988234408" aria-label="WhatsApp">
                     <img src="../img/whatsapp.png" alt="WhatsApp">
                 </a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">🌙</button>
             </div>
         </nav>
     </header>
 
     <main>
+
         <section class="hero section-band">
             <div class="container hero-grid">
+
                 <div class="hero-copy">
+
                     <p class="eyebrow">Body Piercer Profissional</p>
-                    <h1>Camila<br><span>Body Piercer</span></h1>
 
-                    <p class="hero-text">8 anos de experiência em Varginha/MG</p>
-                    <p class="hero-services">Perfuração básica | Avançada | Íntima | Reconstrução</p>
+                    <h1>
+                        Camila<br>
+                        <span>Body Piercer</span>
+                    </h1>
 
-                    <div class="hero-actions">
-                        <a class="btn btn-primary" href="https://www.instagram.com/camilapiercerr">@camilapiercer</a>
-                        <a class="btn btn-secondary" href="https://api.whatsapp.com/send/?phone=5535988234408">(35) 98823-4408</a>
-                    </div>
+                    <p class="hero-text">
+                        8 anos de experiência em Varginha/MG
+                    </p>
 
-                    <a class="link-arrow" href="Servicos.html">Ver Serviços</a>
+                    <p class="hero-services">
+                        Perfuração básica | Avançada | Íntima | Reconstrução
+                    </p>
+
+                <div class="hero-actions">
+                    <a class="btn btn-primary"href="https://www.instagram.com/camilapiercerr">@camilapiercer</a>
+                    <a class="btn btn-secondary" href="https://api.whatsapp.com/send/?phone=5535988234408">(35) 98823-4408</a>
                 </div>
 
-                <div class="hero-card">
-                    <div class="photo-frame">
-                        <img src="../img/Camila.jpeg" alt="Foto da Camila">
-                    </div>
-                </div>
+            <a class="link-arrow" href="Servicos.html">Ver Serviços</a>
+
             </div>
-        </section>
+              <div class="hero-card">
+                  <div class="photo-frame">
+                      <img src="../img/Camila.jpeg" alt="Foto da Camila">
+                 </div>
+             </div>
+         </div>
+    </section>
 
-        <section class="features">
+    <section class="features">
+
             <div class="container">
+
                 <div class="section-heading">
                     <p class="eyebrow">Diferenciais</p>
                     <h2>Por que escolher a Camila?</h2>
                 </div>
 
                 <div class="cards-grid">
+
                     <article class="info-card">
                         <div class="card-icon">01</div>
-                        <h3>8 Anos de Experiência</h3>
-                        <p>Profissional qualificada com vasta experiência em perfurações de todos os níveis de complexidade.</p>
+
+                    <h3>8 Anos de Experiência</h3>
+
+                    <p>Profissional qualificada com vasta experiência em perfurações de todos os níveis de complexidade.</p>
                     </article>
 
                     <article class="info-card">
                         <div class="card-icon">02</div>
+
                         <h3>Segurança e Higiene</h3>
-                        <p>Materiais esterilizados, ambiente seguro e todas as normas sanitárias seguidas rigorosamente.</p>
+
+                        <p>
+                            Materiais esterilizados, ambiente seguro e todas as normas sanitárias seguidas rigorosamente.
+                        </p>
                     </article>
 
                     <article class="info-card">
                         <div class="card-icon">03</div>
+
                         <h3>Atendimento Rápido</h3>
-                        <p>Sempre disponível para tirar dúvidas e responder perguntas sobre piercings e cuidados.</p>
+
+                        <p>
+                            Sempre disponível para tirar dúvidas e responder perguntas sobre piercings e cuidados.
+                        </p>
                     </article>
+
                 </div>
             </div>
         </section>
     </main>
+
     <script src="../arquivos de acessibilidade/recursos de acessiblidade.js"></script>
+
+    <script>
+
+        const themeButton = document.getElementById("theme-toggle");
+
+        // carregar tema salvo
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme === "light") {
+            document.body.classList.add("light");
+            themeButton.textContent = "☀️";
+        }
+
+        themeButton.addEventListener("click", () => {
+
+            document.body.classList.toggle("light");
+
+            const isLight = document.body.classList.contains("light");
+
+            if (isLight) {
+                themeButton.textContent = "☀️";
+                localStorage.setItem("theme", "light");
+            } else {
+                themeButton.textContent = "🌙";
+                localStorage.setItem("theme", "dark");
+            }
+
+        });
+
+    </script>
+
 </body>
 </html>
-
-
-
