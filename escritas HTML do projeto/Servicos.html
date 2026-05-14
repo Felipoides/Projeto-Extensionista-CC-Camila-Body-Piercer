@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serviços | Camila Piercer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -28,17 +31,36 @@
     </header>
 
     <main>
-        <section class="servicos">
-            <div class="servicos-card">
-                <div class="card pequeno">
-                    <h1>Serviços</h1>
-                    <p>Conheça todos os tipos de perfuração que realizo com excelência e segurança.</p>
+        <section class="services-hero section-band">
+            <div class="container services-hero-grid">
+                <div class="services-hero-copy">
+                    <p class="eyebrow">Procedimentos</p>
+                    <h1>Serviços de piercing com técnica, segurança e estilo.</h1>
+                    <p>Escolha o tipo de perfuração, tire dúvidas sobre cuidados e agende um atendimento personalizado com a Camila.</p>
+                    <div class="services-hero-actions">
+                        <a class="btn btn-primary" href="contato.html">Agendar pelo WhatsApp</a>
+                        <a class="btn btn-secondary" href="#lista-servicos">Ver opções</a>
+                    </div>
+                </div>
+
+                <div class="services-highlight card-surface">
+                    <span>8+</span>
+                    <strong>anos de experiência</strong>
+                    <p>Atendimento cuidadoso em perfurações básicas, avançadas, íntimas e reconstruções.</p>
                 </div>
             </div>
         </section>
 
-        <section class="servicos-lista" aria-label="Lista de serviços">
+        <section class="services-intro">
+            <div class="container section-heading">
+                <p class="eyebrow">Escolha seu atendimento</p>
+                <h2>Serviços disponíveis</h2>
+            </div>
+        </section>
+
+        <section id="lista-servicos" class="servicos-lista" aria-label="Lista de serviços">
             <article class="servico-card">
+                <span class="servico-tag">Essenciais</span>
                 <h3>Perfuração Básica</h3>
                 <p>Piercings tradicionais realizados com segurança e precisão.</p>
                 <ul>
@@ -48,9 +70,11 @@
                     <li>Septo</li>
                     <li>Sobrancelha</li>
                 </ul>
+                <a href="contato.html?servico=Perfura%C3%A7%C3%A3o%20B%C3%A1sica">Consultar disponibilidade</a>
             </article>
 
             <article class="servico-card">
+                <span class="servico-tag">Técnica avançada</span>
                 <h3>Perfuração Avançada</h3>
                 <p>Piercings mais complexos com técnica refinada.</p>
                 <ul>
@@ -60,9 +84,11 @@
                     <li>Conch e industrial</li>
                     <li>Snug e outros</li>
                 </ul>
+                <a href="contato.html?servico=Perfura%C3%A7%C3%A3o%20Avan%C3%A7ada">Consultar disponibilidade</a>
             </article>
 
             <article class="servico-card">
+                <span class="servico-tag">Privacidade</span>
                 <h3>Perfuração Íntima</h3>
                 <p>Atendimento discreto e profissional.</p>
                 <ul>
@@ -72,9 +98,11 @@
                     <li>Total discrição</li>
                     <li>Orientação completa</li>
                 </ul>
+                <a href="contato.html?servico=Perfura%C3%A7%C3%A3o%20%C3%8Dntima">Consultar disponibilidade</a>
             </article>
 
             <article class="servico-card">
+                <span class="servico-tag">Correção</span>
                 <h3>Reconstrução</h3>
                 <p>Correção de piercings antigos ou mal posicionados.</p>
                 <ul>
@@ -84,7 +112,135 @@
                     <li>Orientação de cicatrização</li>
                     <li>Acompanhamento</li>
                 </ul>
+                <a href="contato.html?servico=Reconstru%C3%A7%C3%A3o">Consultar disponibilidade</a>
             </article>
+        </section>
+
+        <section class="catalog-section" aria-labelledby="catalogo-title">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Catálogo</p>
+                    <h2 id="catalogo-title">Perfurações mais procuradas</h2>
+                </div>
+
+                <div class="catalog-grid">
+                    <article class="catalog-card">
+                        <div class="catalog-visual catalog-ear" aria-hidden="true">
+                            <span class="piercing-point point-helix"></span>
+                        </div>
+                        <div class="catalog-content">
+                            <span class="catalog-category">Orelha</span>
+                            <h3>Helix</h3>
+                            <p>Perfuração na cartilagem superior da orelha, versátil para joias delicadas.</p>
+                            <dl>
+                                <div><dt>Estilo</dt><dd>Delicado</dd></div>
+                                <div><dt>Cuidados</dt><dd>Cartilagem</dd></div>
+                            </dl>
+                            <a href="contato.html?servico=Helix">Quero esse</a>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card">
+                        <div class="catalog-visual catalog-ear" aria-hidden="true">
+                            <span class="piercing-point point-tragus"></span>
+                        </div>
+                        <div class="catalog-content">
+                            <span class="catalog-category">Orelha</span>
+                            <h3>Tragus</h3>
+                            <p>Opção moderna na cartilagem próxima ao canal auditivo, com resultado marcante.</p>
+                            <dl>
+                                <div><dt>Estilo</dt><dd>Moderno</dd></div>
+                                <div><dt>Cuidados</dt><dd>Precisos</dd></div>
+                            </dl>
+                            <a href="contato.html?servico=Tragus">Quero esse</a>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card">
+                        <div class="catalog-visual catalog-ear" aria-hidden="true">
+                            <span class="piercing-point point-conch"></span>
+                        </div>
+                        <div class="catalog-content">
+                            <span class="catalog-category">Orelha</span>
+                            <h3>Conch</h3>
+                            <p>Perfuração na parte interna da cartilagem, ótima para composições de orelha.</p>
+                            <dl>
+                                <div><dt>Estilo</dt><dd>Composição</dd></div>
+                                <div><dt>Cuidados</dt><dd>Acompanhamento</dd></div>
+                            </dl>
+                            <a href="contato.html?servico=Conch">Quero esse</a>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card">
+                        <div class="catalog-visual catalog-nose" aria-hidden="true">
+                            <span class="piercing-point point-nostril"></span>
+                        </div>
+                        <div class="catalog-content">
+                            <span class="catalog-category">Nariz</span>
+                            <h3>Nostril</h3>
+                            <p>Clássico piercing na lateral do nariz, discreto e fácil de combinar.</p>
+                            <dl>
+                                <div><dt>Estilo</dt><dd>Clássico</dd></div>
+                                <div><dt>Joia</dt><dd>Ponto de luz</dd></div>
+                            </dl>
+                            <a href="contato.html?servico=Nostril">Quero esse</a>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card">
+                        <div class="catalog-visual catalog-nose" aria-hidden="true">
+                            <span class="piercing-point point-septum"></span>
+                        </div>
+                        <div class="catalog-content">
+                            <span class="catalog-category">Nariz</span>
+                            <h3>Septo</h3>
+                            <p>Perfuração central com presença forte, indicada após avaliação anatômica.</p>
+                            <dl>
+                                <div><dt>Estilo</dt><dd>Marcante</dd></div>
+                                <div><dt>Avaliação</dt><dd>Essencial</dd></div>
+                            </dl>
+                            <a href="contato.html?servico=Septo">Quero esse</a>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card">
+                        <div class="catalog-visual catalog-brow" aria-hidden="true">
+                            <span class="piercing-point point-brow"></span>
+                        </div>
+                        <div class="catalog-content">
+                            <span class="catalog-category">Rosto</span>
+                            <h3>Sobrancelha</h3>
+                            <p>Visual expressivo e urbano, feito com posicionamento cuidadoso.</p>
+                            <dl>
+                                <div><dt>Estilo</dt><dd>Expressivo</dd></div>
+                                <div><dt>Cuidados</dt><dd>Rotina leve</dd></div>
+                            </dl>
+                            <a href="contato.html?servico=Sobrancelha">Quero esse</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-care">
+            <div class="container services-care-grid">
+                <article>
+                    <span>01</span>
+                    <h3>Avaliação</h3>
+                    <p>Conversa rápida para entender o local desejado, anatomia e joia indicada.</p>
+                </article>
+                <article>
+                    <span>02</span>
+                    <h3>Procedimento</h3>
+                    <p>Perfuração com materiais esterilizados e orientação durante todo o atendimento.</p>
+                </article>
+                <article>
+                    <span>03</span>
+                    <h3>Cuidados</h3>
+                    <p>Explicação de higiene, cicatrização e troca de joia para uma recuperação tranquila.</p>
+                </article>
+            </div>
         </section>
     </main>
 

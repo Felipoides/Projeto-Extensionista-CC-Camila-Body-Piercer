@@ -44,12 +44,40 @@
                 <article class="contact-panel card-surface">
                     <p class="eyebrow">Atendimento</p>
                     <h2>Vamos conversar?</h2>
-                    <p>Escolha o canal que preferir para falar com a Camila e receber um atendimento rápido e acolhedor.</p>
+                    <p>Preencha os dados e envie uma mensagem pronta para o WhatsApp da Camila.</p>
 
-                    <div class="contact-actions">
-                        <a class="btn btn-primary" href="https://api.whatsapp.com/send/?phone=5535988234408&text&type=phone_number&app_absent=0&utm_source=ig" target="_blank" rel="noopener noreferrer">Chamar no WhatsApp</a>
-                        <a class="btn btn-secondary" href="https://www.instagram.com/camilapiercerr?igsh=MXJnbnh0bXM4ZmdyZA%3D%3D" target="_blank" rel="noopener noreferrer">Abrir Instagram</a>
-                    </div>
+                    <form class="contact-form" data-contact-form>
+                        <label>
+                            Nome
+                            <input type="text" name="nome" placeholder="Seu nome" required>
+                        </label>
+
+                        <fieldset class="contact-service-field">
+                            <legend>Serviço</legend>
+                            <input type="hidden" name="servico" data-service-value>
+                            <div class="service-picker" aria-label="Escolha um serviço">
+                                <button type="button" data-service-option="Perfuração Básica">Perfuração Básica</button>
+                                <button type="button" data-service-option="Perfuração Avançada">Perfuração Avançada</button>
+                                <button type="button" data-service-option="Perfuração Íntima">Perfuração Íntima</button>
+                                <button type="button" data-service-option="Reconstrução">Reconstrução</button>
+                                <button type="button" data-service-option="Dúvidas sobre cuidados">Dúvidas sobre cuidados</button>
+                            </div>
+                        </fieldset>
+
+                        <label>
+                            Melhor horário
+                            <input type="text" name="horario" placeholder="Ex: sábado de manhã">
+                        </label>
+
+                        <label>
+                            Mensagem
+                            <textarea name="mensagem" rows="4" placeholder="Conte o que você quer fazer ou sua dúvida"></textarea>
+                        </label>
+
+                        <p class="contact-form-status" data-contact-status aria-live="polite"></p>
+
+                        <button class="btn btn-primary" type="submit">Enviar para WhatsApp</button>
+                    </form>
                 </article>
 
                 <div class="contact-cards">
@@ -64,13 +92,18 @@
                         <h3>Instagram</h3>
                         <p>Veja trabalhos, acompanhe novidades e fale diretamente pelas mensagens da página.</p>
                     </article>
+
+                    <article class="info-card">
+                        <div class="card-icon">03</div>
+                        <h3>Mensagem pronta</h3>
+                        <p>A página monta o texto automaticamente para facilitar seu agendamento pelo WhatsApp.</p>
+                    </article>
                 </div>
             </div>
         </section>
     </main>
+    <script src="../arquivos de acessibilidade/api-contato.js"></script>
     <script src="../arquivos de acessibilidade/recursos de acessiblidade.js"></script>
 </body>
 </html>
-
-
 
