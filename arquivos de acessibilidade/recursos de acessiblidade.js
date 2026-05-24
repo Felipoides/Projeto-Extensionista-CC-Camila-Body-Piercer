@@ -108,22 +108,32 @@
         return button;
     }
 
-    function createPanel() {
-        const widget = document.createElement("aside");
-        widget.className = "a11y-widget";
-        widget.setAttribute("aria-label", "Ferramentas de acessibilidade");
+function createPanel() {
 
-        const openButton = createButton("A11Y", "a11y-open-button", {
-            "aria-expanded": "false",
-            "aria-controls": "a11y-panel",
-            "aria-label": "Abrir painel de acessibilidade",
-        });
+    const widget = document.createElement("aside");
+
+    widget.className = "a11y-widget";
+
+    widget.setAttribute("aria-label", "Ferramentas de acessibilidade");
+
+const openButton = createButton("", "a11y-open-button", {
+    "aria-expanded": "false",
+    "aria-controls": "a11y-panel",
+    "aria-label": "Abrir painel de acessibilidade",
+});
+
+const icon = document.createElement("img");
+
+icon.src = "../img/acessibilidade.png";
+
+icon.alt = "Acessibilidade";
+
+openButton.appendChild(icon);
 
         const panel = document.createElement("div");
         panel.id = "a11y-panel";
         panel.className = "a11y-panel";
         panel.hidden = true;
-
         panel.innerHTML = `
             <div class="a11y-panel-header">
                 <strong>Acessibilidade</strong>

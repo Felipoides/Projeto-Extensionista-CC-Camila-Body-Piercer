@@ -989,12 +989,13 @@ body {
 
 
 .light .btn-secondary {
-    background: rgba(0,0,0,0.05);
+    background: rgba(230, 20, 20, 0.05);
     color: #333;
 }
 
 .light .btn-primary {
-    box-shadow: none;
+    background: rgba(255, 255, 255, 0.05);
+    color: #220d0d;
 }
 
 .light .photo-frame {
@@ -1042,9 +1043,11 @@ body {
     backdrop-filter: blur(14px);
 }
 
-
+.light .active{
+    color:pink;
+}
 /* LINKS */
-.light .nav-links a {
+.light .nav-links  {
     color: #111;
 }
 
@@ -1108,9 +1111,13 @@ body {
 
 
 /* SERVICOS */
-.light .servico-card {
+.light .card.pequeno {
     background: #fff;
-    color: #111;
+
+}
+.light .servico-card {
+    background: #f8f8f8;
+    color: #0e0101;
 }
 
 
@@ -1247,8 +1254,65 @@ h6 {
     font-size: 16px !important;
 }
 
+.light .a11y-widget button {
+    background-color: !important;
+}
 .a11y-widget button,
 .a11y-widget span,
 .a11y-widget strong {
     font-size: 16px !important;
+}
+.a11y-open-button {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.a11y-open-button img {
+    width: 34px;
+    height: 34px;
+
+    object-fit: contain;
+}
+.mapa {
+    width: min(100% - 32px, 1100px);
+
+    margin: 80px auto;
+
+    padding: 20px;
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(212, 175, 55, 0.25);
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+
+    backdrop-filter: blur(10px);
+}
+
+.mapa h2 {
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    font-size: 2rem;
+}
+
+.mapa iframe {
+    width: 100%;
+
+    height: 450px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    display: block;
 }
