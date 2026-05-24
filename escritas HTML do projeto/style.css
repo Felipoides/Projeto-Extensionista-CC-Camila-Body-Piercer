@@ -867,8 +867,8 @@ body {
 .a11y-high-contrast .servico-card,
 .a11y-high-contrast .contact-panel,
 .a11y-high-contrast .a11y-panel {
-    background: #000000 !important;
-    border-color: #ffffff !important;
+    background: #ffffff !important;
+    border-color: #ecdd00 !important;
     box-shadow: none !important;
 }
 
@@ -878,7 +878,7 @@ body {
 .a11y-high-contrast .link-arrow,
 .a11y-high-contrast .eyebrow,
 .a11y-high-contrast .hero h1 span {
-    color: #ffffff !important;
+    color: #0c0606 !important;
     text-shadow: none !important;
 }
 
@@ -886,9 +886,9 @@ body {
 .a11y-high-contrast button,
 .a11y-high-contrast .btn,
 .a11y-high-contrast .card-icon {
-    color: #000000 !important;
-    background: #ffff00 !important;
-    border-color: #ffffff !important;
+    color: #000000  !important;
+    background: #ff7936 !important;
+    border-color: #dd2a2a !important;
 }
 
 @media (max-width: 640px) {

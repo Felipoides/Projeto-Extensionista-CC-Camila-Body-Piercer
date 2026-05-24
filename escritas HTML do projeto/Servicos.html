@@ -144,39 +144,50 @@
 
     <script>
 
-        const themeButton = document.getElementById("theme-toggle");
+const themeButton = document.getElementById("theme-toggle");
 
-        const savedTheme = localStorage.getItem("theme");
+// carregar tema salvo
+const savedTheme = localStorage.getItem("theme");
 
-        if (savedTheme === "light") {
+if (savedTheme === "light") {
 
-            document.body.classList.add("light");
+    document.body.classList.add("light");
 
-            themeButton.textContent = "☀️";
+    themeButton.innerHTML = `
+        <img src="../img/sol.png" alt="Modo claro">
+    `;
 
-        }
+} else {
 
-        themeButton.addEventListener("click", () => {
+    themeButton.innerHTML = `
+        <img src="../img/lua.png" alt="Modo escuro">
+    `;
+}
 
-            document.body.classList.toggle("light");
+themeButton.addEventListener("click", () => {
 
-            const isLight = document.body.classList.contains("light");
+    document.body.classList.toggle("light");
 
-            if (isLight) {
+    const isLight = document.body.classList.contains("light");
 
-                themeButton.textContent = "☀️";
+    if (isLight) {
 
-                localStorage.setItem("theme", "light");
+        themeButton.innerHTML = `
+            <img src="../img/sol24.png" alt="Modo claro">
+        `;
 
-            } else {
+        localStorage.setItem("theme", "light");
 
-                themeButton.textContent = "🌙";
+    } else {
 
-                localStorage.setItem("theme", "dark");
+        themeButton.innerHTML = `
+            <img src="../img/lua24.png" alt="Modo escuro">
+        `;
 
-            }
+        localStorage.setItem("theme", "dark");
+    }
 
-        });
+});
 
     </script>
 
