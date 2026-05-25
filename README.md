@@ -1,6 +1,6 @@
 # Projeto Extensionista CC - Camila Body Piercer
 
-Projeto de site estático para o serviço de body piercing da Camila, desenvolvido com HTML e CSS.
+Projeto de site estático para o serviço de body piercing da Camila, desenvolvido com HTML,CSS e JavaScript.
 
 ## Descrição
 
@@ -17,12 +17,6 @@ Este projeto inclui páginas de apresentação, serviços, contato e sobre, alé
 - `img/` – imagens utilizadas no projeto
 - `README.md` – documentação do projeto
 
-## Como usar
-
-1. Abra a pasta do projeto no seu editor de código.
-2. Abra `index.html` no navegador para visualizar o site.
-3. Caso prefira, use um servidor local para testar o projeto (por exemplo, com Live Server no VS Code).
-
 ## Tecnologias
 
 - HTML
@@ -30,6 +24,10 @@ Este projeto inclui páginas de apresentação, serviços, contato e sobre, alé
 - Javascript
 
 ## Autor
+Matheus Felipe Silva Vilas Boas
+Cauã José Ferreira Moura
+Marco Túlio Reis de Andrade
+Thiago Patrício Araujo
 
 - Camila Body Piercer
 - Projeto feito como parte da disciplina de extensão
