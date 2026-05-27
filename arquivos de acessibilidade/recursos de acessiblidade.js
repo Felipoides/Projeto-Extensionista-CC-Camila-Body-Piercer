@@ -226,7 +226,7 @@
         });
 
         openButton.innerHTML = `
-            <img src="../img/acessibilidade.png" alt="" aria-hidden="true">
+            <img src="img/acessibilidade.png" alt="" aria-hidden="true">
             <span class="sr-only">Abrir painel de acessibilidade</span>
         `;
 
