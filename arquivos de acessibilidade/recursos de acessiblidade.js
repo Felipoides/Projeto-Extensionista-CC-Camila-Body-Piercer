@@ -337,19 +337,30 @@
     }
 
     function bindVoiceReading() {
+        let lastSpokenElement = null;
+
         document.addEventListener("focusin", (event) => {
             const target = event.target.closest(readableSelector);
             if (!target) return;
             speak(getReadableText(target));
         });
 
-        document.addEventListener("click", (event) => {
+        document.addEventListener("pointerenter", (event) => {
             if (event.target.closest(".a11y-widget")) return;
 
-            const target = event.target.closest("a, button, [role='button'], h1, h2, h3, p, li");
-            if (!target) return;
+            const target = event.target.closest(readableSelector);
+            if (!target || target === lastSpokenElement) return;
+
+            lastSpokenElement = target;
             speak(getReadableText(target));
-        });
+        }, true);
+
+        document.addEventListener("pointerleave", (event) => {
+            const target = event.target.closest(readableSelector);
+            if (target === lastSpokenElement) {
+                lastSpokenElement = null;
+            }
+        }, true);
     }
 
     function improveCurrentMarkup() {

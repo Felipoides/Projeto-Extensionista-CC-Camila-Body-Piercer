@@ -1422,7 +1422,11 @@ html {
 .a11y-light-mode .catalog-content dt {
     color: var(--muted);
 }
-
+.a11y-light-mode .a11y-panel .a11y-reset-button {
+    background: rgba(255, 0, 0, 0.15);
+    color: #2b0002;
+    border: 1px solid rgba(43, 0, 2, 0.18);
+}
 .a11y-light-mode .catalog-content dd {
     color: var(--text);
 }
