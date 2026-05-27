@@ -253,7 +253,6 @@
             <button type="button" data-a11y-toggle="dyslexia">Fonte legível</button>
             <button type="button" data-a11y-toggle="underline">Sublinhar links</button>
             <button type="button" data-a11y-toggle="voice">Leitura por voz</button>
-            <button type="button" class="a11y-test-voice-button">Testar voz</button>
             <button type="button" class="a11y-read-page-button">Ler página</button>
             <p class="a11y-voice-status" data-a11y-voice-status aria-live="polite">Clique em Testar voz.</p>
             <button type="button" class="a11y-reset-button">Restaurar</button>
@@ -279,9 +278,9 @@
 
         openButton.addEventListener("click", () => setPanel(panel.hidden));
         closeButton.addEventListener("click", () => setPanel(false));
-        readPageButton.addEventListener("click", readPage);
-        testVoiceButton.addEventListener("click", testVoice);
-        resetButton.addEventListener("click", resetPreferences);
+        if (readPageButton) readPageButton.addEventListener("click", readPage);
+        if (testVoiceButton) testVoiceButton.addEventListener("click", testVoice);
+        if (resetButton) resetButton.addEventListener("click", resetPreferences);
 
         panel.querySelector('[data-a11y-font="decrease"]').addEventListener("click", () => changeFontScale(-1));
         panel.querySelector('[data-a11y-font="increase"]').addEventListener("click", () => changeFontScale(1));
