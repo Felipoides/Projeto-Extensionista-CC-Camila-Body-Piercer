@@ -23,11 +23,11 @@ Este projeto inclui páginas de apresentação, serviços, contato e sobre, alé
 - CSS
 - Javascript
 
-## Autor
-Matheus Felipe Silva Vilas Boas
-Cauã José Ferreira Moura
-Marco Túlio Reis de Andrade
-Thiago Patrício Araujo
+## Autores
+Matheus Felipe Silva Vilas Boas,
+Cauã José Ferreira Moura,
+Marco Túlio Reis de Andrade,
+Thiago Patrício Araujo.
 
 - Camila Body Piercer
 - Projeto feito como parte da disciplina de extensão
