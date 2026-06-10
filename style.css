@@ -1624,31 +1624,27 @@ html {
     }
 }
 .mapa-container {
-    width: 194%;            
-    max-width: 1200px;     
-    margin: 0 auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    border-radius: 12px;
-    overflow: hidden;
-    }
-
-
-.mapa-proporcao {
-    position: relative;
-    padding-bottom: 50%; 
-    height: 0;
-    overflow: hidden;
-    }
-@media (max-width: 768px) {
-            .mapa-proporcao {
-                padding-bottom: 75%; /* Formato mais quadrado e confortável para o dedo no celular */
-            }
-        }
-.mapa-proporcao iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 100%;
+}
+
+.mapa-container iframe {
+    width: 194%;
+    max-width: 10000px; /* aumenta o tamanho máximo */
+    height: 600px;
     border: 0;
+    border-radius: 3%;
+}
+@media (max-width: 768px) {
+    .mapa-container iframe {
+        width: 95%;
+        height: 300px;
     }
+}
+@media (max-width: 1280px) {
+    .mapa-container iframe {
+        width: 100%;
+        height: 400px;
+    }
+}
