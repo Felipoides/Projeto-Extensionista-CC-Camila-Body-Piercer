@@ -1639,7 +1639,11 @@ html {
     height: 0;
     overflow: hidden;
     }
-
+@media (max-width: 768px) {
+            .mapa-proporcao {
+                padding-bottom: 75%; /* Formato mais quadrado e confortável para o dedo no celular */
+            }
+        }
 .mapa-proporcao iframe {
     position: absolute;
     top: 0;
